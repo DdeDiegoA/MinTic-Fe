@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PublicComponent } from './components/public/public.component';
+import { SignUpComponent} from './components/sign-up/sign-up.component'
 
 // cuando la ruta está vacia ese es el componente que se va lanzar 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
       {
         path:'',  //si esta vacia responde el login
         component: LoginComponent
+      },
+      {
+        path:'singup',
+        component: SignUpComponent
       },
       // sino para poner el componente de not-found
       {

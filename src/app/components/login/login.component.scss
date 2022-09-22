@@ -1,8 +1,15 @@
+.body{
+    overflow-x: hidden;
+ }
 
 .center-login{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: content-box;
+    padding-left: 0;
+    padding-right:0;
+    width: 100%;
 }
 
 .card-content {
