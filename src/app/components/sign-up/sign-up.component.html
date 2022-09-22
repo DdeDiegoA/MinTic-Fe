@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="sign-up.component.scss"/>
+    <script src = "https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <h1>Sign up</h1>
+    <form class="formulario">  
+        <fieldset>
+            <legend>Datos persona:</legend>
+
+            <label for="nombre">Nombre de usuario:</label><br/>
+            <input type="text" id="nombre" name="nombre"    
+                placeholder="Escribe tu nombre" required="true"/><br/>
+
+            <label for="email">Email:</label><br/>
+            <input type="email" id="email" name="email" placeholder="Escribe tu correo"/><br/>
+
+            <label for="contraseña">Contraseña:</label><br/>
+            <input type="password" id="contraseña" name="contraseña"
+                required="true"/><br/>
+            
+            <label for="confirmar-contraseña">Confirmar Contraseña:</label><br/>
+            <input type="password" id="confirmar-contraseña" name="confirmar-contraseña"
+                required="true"/><br/>
+            
+            <input type="submit" value="Registrarse"/>  
+            <input type="reset" value="Restablecer"/> 
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
