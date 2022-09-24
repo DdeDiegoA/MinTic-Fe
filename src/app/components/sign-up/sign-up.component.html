@@ -1,40 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
-    <link rel="stylesheet" href="sign-up.component.scss"/>
-    <script src = "https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    
-    <h1>Sign up</h1>
-    <form class="formulario">  
-        <fieldset>
-            <legend>Datos persona:</legend>
-
-            <label for="nombre">Nombre de usuario:</label><br/>
-            <input type="text" id="nombre" name="nombre"    
-                placeholder="Escribe tu nombre" required="true"/><br/>
-
-            <label for="email">Email:</label><br/>
-            <input type="email" id="email" name="email" placeholder="Escribe tu correo"/><br/>
-
-            <label for="contraseña">Contraseña:</label><br/>
-            <input type="password" id="contraseña" name="contraseña"
-                required="true"/><br/>
-            
-            <label for="confirmar-contraseña">Confirmar Contraseña:</label><br/>
-            <input type="password" id="confirmar-contraseña" name="confirmar-contraseña"
-                required="true"/><br/>
-            
-            <input type="submit" value="Registrarse"/>  
-            <input type="reset" value="Restablecer"/> 
-
-        </fieldset>
-    </form>
-
-</body>
-</html>
+<div class="content center-singup">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Registro de usuario</mat-card-title>
+            <mat-card-subtitle>Registra tus datos</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+            <form [formGroup]="singUpForm" (ngSubmit)="doSingUp()" class="singup-form">
+                <mat-form-field appearance="fill">
+                    <mat-label>Correo electronico</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="hasError('email')">
+                        <span *ngIf="hasErrorForValidation('email','required')">Correo electronico requerido</span>
+                        <span *ngIf="hasErrorForValidation('email','email')">Correo electronico invalido</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="name" type="text">
+                    <mat-error *ngIf="hasError('name')">
+                        <span *ngIf="hasErrorForValidation('name','required')">Nombre requerido</span>
+                        <span *ngIf="hasErrorForValidation('name','minlength')">Nombre y Apellido</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput formControlName="password" type="password">
+                    <mat-error *ngIf="hasError('password')">
+                        <span *ngIf="hasErrorForValidation('password','required')">Contraseña requerida</span>
+                        <span *ngIf="hasErrorForValidation('password','minlength')">Contraseña debe ser minimo 8 caracteres</span>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="primary" [disabled]="!singUpForm.valid || singUpForm.untouched">Registrarse</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

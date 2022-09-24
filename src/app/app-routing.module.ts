@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PublicComponent } from './components/public/public.component';
 import { SignUpComponent} from './components/sign-up/sign-up.component'
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 // cuando la ruta está vacia ese es el componente que se va lanzar 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
     children:[
       {
         path:'',  //si esta vacia responde el login
+        component: AboutUsComponent
+      },
+      {
+        path:'login',
         component: LoginComponent
       },
       {

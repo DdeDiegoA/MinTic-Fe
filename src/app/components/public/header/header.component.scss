@@ -11,35 +11,42 @@ align-items para centrar inicio, sobrenosotros y contacto
 */
 header{
     display: flex;
-    background-color: #0d2033;
-    justify-content: space-around;
+    background-color: #0e294A;
+    justify-content: space-between;
     align-items: center;
     padding-left:0;
     padding-right:0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     min-width: 100%;
-    max-width: 100%;
+    max-width: 100vw;
 
 }
 
 .logo{
+    padding-left: 5%;
     display: flex;
     align-items: center;
 }
 .logo img{
     height: 75px;
     margin-right: 10px;
+    filter: invert(100%);
 }
 a{
     text-decoration: none;
-    color: white;
+    color: rgb(237, 231, 231);
+}
+nav{
+    padding-right: 5%;
 }
 nav a{
     font-weight: 600;
     padding-right: 10px;
 }
 nav a:hover{
-    color:black;
+    color:#8f8677;
 }
 
 @media (max-width:700px){
