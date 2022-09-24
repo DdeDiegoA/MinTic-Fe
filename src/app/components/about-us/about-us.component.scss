@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+ul{
+    display: flex;
+    list-style: none;
+    max-width: 80%;
+    height: 60vh;
+    margin-block: 2rem;
+    margin-inline: auto;
+    overflow: auto ;
+    scroll-snap-type: x mandatory;
+}
+    ::-webkit-scrollbar{
+        background-color: rgb(255, 255, 255);
+        height: 10px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: rgba(0, 0, 0, 0.718);
+        border-radius: 20px;
+    }
+
+    li{
+        display: grid;
+        place-items: center;
+        color: white;
+        font-size: 3rem;
+
+        aspect-ratio: 2/1;
+        width: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+        .somos{
+            background-image: url(https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .mision{
+            background-image: url(https://images.unsplash.com/photo-1662535105424-69881df24c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .vision{
+            background-image: url(https://images.unsplash.com/photo-1661600500531-aa1e8bd7cc11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1582&q=80);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+.somosdiv{
+    height: 75%;
+    width: 40%;
+    overflow-wrap: break-word;
+    background: rgba(237, 237, 237, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.519);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(120, 175, 220, 0.15);
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+    .somosdiv h1{
+        display: flex;
+        color: black;
+        justify-content: first baseline;
+        padding: 3%;
+
+        font-size: 3rem;
+        font-weight: bold;
+    }
+    .somosdiv h3{
+        display: flex;
+        color: black;
+        padding: 3%;
+        text-align: start;
+        font-size: 1.5rem;
+    }

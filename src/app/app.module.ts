@@ -16,6 +16,7 @@ import { PublicComponent } from './components/public/public.component';
 import { HeaderComponent } from './components/public/header/header.component';
 import { FooterComponent } from './components/public/footer/footer.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     PublicComponent,
     HeaderComponent,
     FooterComponent,
-    SignUpComponent
+    SignUpComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
