@@ -6,10 +6,10 @@
             <mat-card-subtitle>Ingresa tus credenciales</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="card-content">
-            <form [formGroup]="loginForm" (ngSubmit)="doLogin()" class="login-form">
+            <form [formGroup]="loginForm" (ngSubmit)="doLogin()" class="login-form" #loginFormRef="ngForm">
                 <mat-form-field appearance="fill">
                     <mat-label>Correo electronico</mat-label>
-                    <input matInput formControlName="email">
+                    <input matInput formControlName="email" type="email">
                     <mat-error *ngIf="hasError('email')">
                         <span *ngIf="hasErrorForValidation('email','required')">Correo electronico requerido</span>
                         <span *ngIf="hasErrorForValidation('email','email')">Correo electronico invalido</span>
@@ -26,7 +26,8 @@
             </form>
         </mat-card-content>
         <mat-card-actions align="end">
-            <button mat-raised-button color="primary" [disabled]="!loginForm.valid || loginForm.untouched">Inicio de sesión</button>
+            <button mat-raised-button color="primary" [disabled]="!loginForm.valid || loginForm.untouched"
+            (click)="loginFormRef.ngSubmit.emit()">Inicio de sesión</button>
         </mat-card-actions>
     </mat-card>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
     this.initForm()
@@ -18,7 +19,12 @@ export class LoginComponent implements OnInit {
 
   // aqui va recibir los valores que se llenaron en el formulario
   doLogin(){
-    console.log('Peticion http login ${JSON.stringify(this.loginForm.value)}')
+    this.authService.login(this.loginForm.value["email"],this.loginForm.value["password"]).subscribe(data => {
+      console.log("login exitoso")
+    }, err =>{
+      console.log("login failed")
+    })
+    console.log(`Peticion http login ${JSON.stringify(this.loginForm.value)}`)
   }
 
   hasError(field: string): boolean{

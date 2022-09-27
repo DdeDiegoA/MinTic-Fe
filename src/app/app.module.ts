@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/public/header/header.component';
 import { FooterComponent } from './components/public/footer/footer.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { PrivateComponent } from './components/private/private.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     HeaderComponent,
     FooterComponent,
     SignUpComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    PrivateComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +38,11 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     MatProgressSpinnerModule,
     MatCardModule,
     MatButtonModule,
-    ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
