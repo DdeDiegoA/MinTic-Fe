@@ -2,7 +2,7 @@
 <div class="content center-login">
     <mat-card>
         <mat-card-header>
-            <mat-card-title>Inicio de sesión</mat-card-title>
+            <mat-card-title>INICIO DE SESION</mat-card-title>
             <mat-card-subtitle>Ingresa tus credenciales</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="card-content">
@@ -10,6 +10,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Correo electronico</mat-label>
                     <input matInput formControlName="email" type="email">
+                    <mat-icon matSuffix>email</mat-icon>
                     <mat-error *ngIf="hasError('email')">
                         <span *ngIf="hasErrorForValidation('email','required')">Correo electronico requerido</span>
                         <span *ngIf="hasErrorForValidation('email','email')">Correo electronico invalido</span>
@@ -17,7 +18,8 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput formControlName="password" type="password">
+                    <input matInput formControlName="password" [type]="icon==='visibility'? 'text':'password'">
+                    <mat-icon matSuffix (click)="toggleIcon()">{{icon}}</mat-icon>
                     <mat-error *ngIf="hasError('password')">
                         <span *ngIf="hasErrorForValidation('password','required')">Contraseña requerida</span>
                         <span *ngIf="hasErrorForValidation('password','minlength')">Contraseña debe ser minimo 8 caracteres</span>

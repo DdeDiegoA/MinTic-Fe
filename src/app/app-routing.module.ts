@@ -8,6 +8,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { PrivateComponent } from './components/private/private.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NoAuthGuard } from './guards/no-auth.guard';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 // cuando la ruta está vacia ese es el componente que se va lanzar 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
     canActivate:[AuthGuard],
     component: PrivateComponent,
     children:[
+      {
+        path:'dashboard',
+        component:DashboardComponent,
+      }
 
     ]
 

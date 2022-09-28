@@ -48,7 +48,6 @@ export class AuthService {
           Authorization: `Bearer ${localStorage.getItem(TOKEN)}`
         }
     }).pipe(map(body =>{
-      console.log(body)
       localStorage.setItem('role',body.role.name)
       localStorage.setItem('user',JSON.stringify(body))
       this.dataService.seudonimo.next(body.seudonimo)

@@ -10,11 +10,26 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  icon:string;
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService) {
+
+    this.icon='visibility_off' 
+  
+  }
+
+  
 
   ngOnInit(): void {
     this.initForm()
+  }
+
+  toggleIcon(){
+    if (this.icon === 'visibility_off'){
+      this.icon='visibility'
+    } else{
+      this.icon = 'visibility_off'
+    }
   }
 
   // aqui va recibir los valores que se llenaron en el formulario
@@ -24,7 +39,6 @@ export class LoginComponent implements OnInit {
     }, err =>{
       console.log("login failed")
     })
-    console.log(`Peticion http login ${JSON.stringify(this.loginForm.value)}`)
   }
 
   hasError(field: string): boolean{

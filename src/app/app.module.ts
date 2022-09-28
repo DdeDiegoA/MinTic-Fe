@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
@@ -18,6 +19,7 @@ import { FooterComponent } from './components/public/footer/footer.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { PrivateComponent } from './components/private/private.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { PrivateComponent } from './components/private/private.component';
     FooterComponent,
     SignUpComponent,
     AboutUsComponent,
-    PrivateComponent
+    PrivateComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { PrivateComponent } from './components/private/private.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
     
   ],
   providers: [],

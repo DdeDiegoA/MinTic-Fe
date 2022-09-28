@@ -7,12 +7,20 @@ import { FormControl,Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-
-  constructor() { }
+  icon:string;
+  constructor() {this.icon='visibility_off' }
   singUpForm: FormGroup;
 
   ngOnInit(): void {
     this.initForm()
+  }
+
+  toggleIcon(){
+    if (this.icon === 'visibility_off'){
+      this.icon='visibility'
+    } else{
+      this.icon = 'visibility_off'
+    }
   }
 
   doSingUp(){

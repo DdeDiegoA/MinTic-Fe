@@ -9,6 +9,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Correo electronico</mat-label>
                     <input matInput formControlName="email">
+                    <mat-icon matSuffix>email</mat-icon>
                     <mat-error *ngIf="hasError('email')">
                         <span *ngIf="hasErrorForValidation('email','required')">Correo electronico requerido</span>
                         <span *ngIf="hasErrorForValidation('email','email')">Correo electronico invalido</span>
@@ -18,6 +19,7 @@
                     
                     <mat-label>Nombre</mat-label>
                     <input matInput formControlName="name" type="text">
+                    <mat-icon matSuffix>person</mat-icon>
                     <mat-error *ngIf="hasError('name')">
                         <span *ngIf="hasErrorForValidation('name','required')">Nombre requerido</span>
                         <span *ngIf="hasErrorForValidation('name','minlength')">Nombre y Apellido</span>
@@ -25,8 +27,8 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput formControlName="password" type="password">
-                    <mat-error *ngIf="hasError('password')">
+                    <input matInput formControlName="password" [type]="icon==='visibility'? 'text':'password'">  
+                    <mat-icon matSuffix (click)="toggleIcon()">{{icon}}</mat-icon>                  <mat-error *ngIf="hasError('password')">
                         <span *ngIf="hasErrorForValidation('password','required')">Contraseña requerida</span>
                         <span *ngIf="hasErrorForValidation('password','minlength')">Contraseña debe ser minimo 8 caracteres</span>
                     </mat-error>

@@ -10,6 +10,13 @@ mat-card{
     -webkit-backdrop-filter: blur(8.6px);
     border: 1px solid rgba(27, 29, 128, 0.19);
 }
+mat-card-header,mat-card-title, mat-card-subtitle{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
 .center-login{
     display: flex;
     justify-content: center;
