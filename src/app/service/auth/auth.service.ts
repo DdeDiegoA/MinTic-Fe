@@ -31,7 +31,7 @@ export class AuthService {
         map((body) => {
           localStorage.setItem(TOKEN, body.access_token);
           this.dataService.isLogedIn.next(true);
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['user-info']);
           this.dataService.loadingScreen.next(false);
           return body;
         }),

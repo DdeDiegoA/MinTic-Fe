@@ -3,12 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { MeResponse } from 'src/app/models/auth/me-response';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-user-info',
+  templateUrl: './user-info.component.html',
+  styleUrls: ['./user-info.component.scss']
 })
-export class DashboardComponent implements OnInit {
-  
+export class UserInfoComponent implements OnInit {
+
   userInfo:MeResponse;
 
   constructor(private route:ActivatedRoute) { 
@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.userInfo)
   }
 
 }

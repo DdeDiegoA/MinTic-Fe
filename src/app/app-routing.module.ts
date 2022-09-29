@@ -8,8 +8,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { PrivateComponent } from './components/private/private.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NoAuthGuard } from './guards/no-auth.guard';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserResolver } from './resolvers/user/user.resolver';
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 // cuando la ruta está vacia ese es el componente que se va lanzar 
 const routes: Routes = [
@@ -33,27 +33,28 @@ const routes: Routes = [
         component: SignUpComponent
       },
       // sino para poner el componente de not-found
-      {
-        path: 'not-found',
-        component: NotFoundComponent
-      },
     ]
   },
   {
-    path:'dashboard',
+    path:'',
     canActivate:[AuthGuard],
     component: PrivateComponent,
     children:[
       {
-        path:'',
+        path:'user-info',
         resolve:{
           response :UserResolver,
         },
-        component:DashboardComponent,
-      }
+        component:UserInfoComponent,
+      },
+      
 
     ]
 
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent
   },
   // cualquier path que no tenga correspondencia lo redireccione a not-found 
   {

@@ -21,9 +21,10 @@ import { FooterComponent } from './components/public/footer/footer.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { PrivateComponent } from './components/private/private.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HasPermissionDirective } from './directives/has-permission.directive'
+import { HasPermissionDirective } from './directives/has-permission.directive';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UsersDashboardComponent } from './components/users-dashboard/users-dashboard.component'
 
 @NgModule({
   declarations: [
@@ -36,8 +37,9 @@ import { HasPermissionDirective } from './directives/has-permission.directive'
     SignUpComponent,
     AboutUsComponent,
     PrivateComponent,
-    DashboardComponent,
-    HasPermissionDirective
+    HasPermissionDirective,
+    UserInfoComponent,
+    UsersDashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -19,11 +19,34 @@
             <span *ngIf="!isLoggedIn" routerLink="singup" class="nav-link">SingUp</span>
             <span *ngIf="!isLoggedIn" routerLink="login" class="nav-link">Login</span>
         </nav>
+        <span *ngIf="isLoggedIn" class="salute">¡Bienvenido {{ nombre }}!</span>
         <nav *ngIf="isLoggedIn">
-            <span *ngIf="isLoggedIn" class="salute">¡Bienvenido {{ nombre }}!</span>
+            
 
-            <span *appHasPermission="['Admin']" >roles</span>
-            <span *appHasPermission="['Ciudadano']" >roles2</span>
+            <span *appHasPermission="['Admin','Jurado']" [matMenuTriggerFor]="menuAdmin" aria-label="menu">Administracion</span>
+            <mat-menu class="menumat" #menuAdmin="matMenu">
+                <button mat-menu-item class="navegationButton"  *appHasPermission="['Admin']" matSuffix>
+                    <mat-icon>perm_identity</mat-icon>
+                    <span class="item">Usuarios</span>
+                </button>
+                <button mat-menu-item class="navegationButton"  *appHasPermission="['Admin']" matSuffix>
+                    <mat-icon>move_to_inbox</mat-icon>
+                    <span class="item">Mesas</span>
+                </button>
+                <button mat-menu-item class="navegationButton"  *appHasPermission="['Admin']" matSuffix>
+                    <mat-icon>supervisor_account</mat-icon>
+                    <span class="item">Candidatos</span>
+                </button>
+                <button mat-menu-item class="navegationButton"  *appHasPermission="['Admin']" matSuffix>
+                    <mat-icon>supervised_user_circle</mat-icon>
+                    <span class="item">Partidos</span>
+                </button>
+                <button mat-menu-item class="navegationButton"  *appHasPermission="['Admin','Jurado']" matSuffix>
+                    <mat-icon>how_to_vote</mat-icon>
+                    <span class="item">Resultados</span>
+                </button>
+            </mat-menu>
+            <span>Resultados</span>
 
             <button *ngIf="isLoggedIn" mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
                 <mat-icon class="menuicon">more_vert</mat-icon>

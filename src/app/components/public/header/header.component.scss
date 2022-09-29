@@ -27,6 +27,7 @@ header{
     color: white;
     font-weight: bold;
     font-size: 1.1em;
+    padding-left: 40%;
 }
 .logo{
     padding-left: 5%;
@@ -69,6 +70,15 @@ nav span:hover{
     mat-icon{
         color: rgb(199, 66, 66);
     }
+}
+.navegationButton:hover{
+    background-color: rgba(26, 74, 141, 0.24);
+    .item:hover{
+        color: rgb(29, 45, 218);
+    }
+    mat-icon{
+        color: rgb(29, 45, 218);
+    } 
 }
 mat-icon{
     color: #d2d9df;
