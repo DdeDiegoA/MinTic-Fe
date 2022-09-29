@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
@@ -20,6 +22,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { PrivateComponent } from './components/private/private.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HasPermissionDirective } from './directives/has-permission.directive'
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SignUpComponent,
     AboutUsComponent,
     PrivateComponent,
-    DashboardComponent
+    DashboardComponent,
+    HasPermissionDirective
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule
     
   ],
   providers: [],

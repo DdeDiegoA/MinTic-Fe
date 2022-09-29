@@ -9,6 +9,7 @@ import { PrivateComponent } from './components/private/private.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NoAuthGuard } from './guards/no-auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UserResolver } from './resolvers/user/user.resolver';
 
 // cuando la ruta está vacia ese es el componente que se va lanzar 
 const routes: Routes = [
@@ -44,7 +45,10 @@ const routes: Routes = [
     component: PrivateComponent,
     children:[
       {
-        path:'dashboard',
+        path:'',
+        resolve:{
+          response :UserResolver,
+        },
         component:DashboardComponent,
       }
 

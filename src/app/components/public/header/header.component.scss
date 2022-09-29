@@ -23,7 +23,11 @@ header{
     max-width: 100vw;
 
 }
-
+.salute{
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+}
 .logo{
     padding-left: 5%;
     display: flex;
@@ -34,21 +38,46 @@ header{
     margin-right: 10px;
     filter: invert(100%);
 }
-a{
+.item{
+    color: rgb(0, 0, 0);
+    font-weight: normal;
+}
+span,a{
     text-decoration: none;
     color: rgb(237, 231, 231);
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
 }
 nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-right: 5%;
 }
-nav a{
-    font-weight: 600;
+nav span{
     padding-right: 10px;
 }
-nav a:hover{
+nav span:hover{
     color:#8f8677;
 }
-
+.logoutbutton:hover{
+    background-color: rgba(141, 26, 26, 0.24);
+    .item:hover{
+        color: rgb(199, 66, 66);
+    }
+    mat-icon{
+        color: rgb(199, 66, 66);
+    }
+}
+mat-icon{
+    color: #d2d9df;
+    align-items: center;
+    // filter: invert(100%);
+}
+.menumat{
+    color: #0e294A;
+}
 @media (max-width:700px){
     header{
         flex-direction: column;

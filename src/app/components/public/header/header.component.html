@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encabezado responsive</title>
-    <link rel="stylesheet" href="header.component.scss">
+    <link rel="stylesheet" href="header.component.scss" />
 </head>
+
 <body>
     <header>
-        <a href="#" class="logo">
-            <img src="./assets/img/LogoRegistraduria.png" alt="Logo Regsitraduria"> 
+        <a routerLink="/" class="logo">
+            <img src="./assets/img/LogoRegistraduria.png" alt="Logo Regsitraduria" />
             <h2 class="registraduria-nacional">Registraduria Nacional</h2>
         </a>
-        <nav>
-            <a routerLink="singup" class="nav-link">SingUp</a>
-            <a routerLink="login" class="nav-link">Login</a>
+        <nav *ngIf="!isLoggedIn">
+            <span *ngIf="!isLoggedIn" routerLink="singup" class="nav-link">SingUp</span>
+            <span *ngIf="!isLoggedIn" routerLink="login" class="nav-link">Login</span>
         </nav>
-        
+        <nav *ngIf="isLoggedIn">
+            <span *ngIf="isLoggedIn" class="salute">¡Bienvenido {{ nombre }}!</span>
+
+            <span *appHasPermission="['Admin']" >roles</span>
+            <span *appHasPermission="['Ciudadano']" >roles2</span>
+
+            <button *ngIf="isLoggedIn" mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
+                <mat-icon class="menuicon">more_vert</mat-icon>
+            </button>
+            <mat-menu class="menumat" #menu="matMenu">
+                <button mat-menu-item class="logoutbutton" *ngIf="isLoggedIn" (click)="logout()" matSuffix>
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span class="item">LogOut</span>
+                </button>
+            </mat-menu>
+        </nav>
     </header>
-    
 </body>
+
 </html>
