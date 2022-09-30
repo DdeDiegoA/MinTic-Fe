@@ -10,6 +10,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { NoAuthGuard } from './guards/no-auth.guard';
 import { UserResolver } from './resolvers/user/user.resolver';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UsersResolver } from './resolvers/users/users.resolver';
+import { IsRoleGuard } from './guards/is-role.guard';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
 // cuando la ruta está vacia ese es el componente que se va lanzar 
 const routes: Routes = [
@@ -47,6 +50,18 @@ const routes: Routes = [
         },
         component:UserInfoComponent,
       },
+      {
+        path:'users-dashboard',
+        data:{
+          roles:'Admin',
+        },
+        canActivate:[IsRoleGuard],
+        resolve:{
+          response: UsersResolver,
+        },
+        component:UserDashboardComponent
+      },
+      
       
 
     ]
@@ -56,6 +71,7 @@ const routes: Routes = [
     path: 'not-found',
     component: NotFoundComponent
   },
+  
   // cualquier path que no tenga correspondencia lo redireccione a not-found 
   {
     path:'**',

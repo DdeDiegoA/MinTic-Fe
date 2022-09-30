@@ -1,0 +1,41 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  width: 60%;
+}
+
+.edit-icon {
+  color: rgb(13, 111, 2);
+}
+
+.edit-icon:hover {
+  color: rgb(23, 163, 7);
+}
+
+.delete-icon {
+  color: rgb(171, 10, 10);
+}
+
+.delete-icon:hover {
+  color: rgb(250, 0, 0);
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 40%;
+}
+
+td,
+th {
+  width: 25%;
+}

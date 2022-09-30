@@ -23,7 +23,7 @@ export class AuthService {
   login(email: String, password: String): Observable<LoginResponse> {
     this.dataService.loadingScreen.next(true);
     return this._http
-      .post<LoginResponse>(`${environment.sbeUrl}${this.ENDPOINT}`, {
+      .post<LoginResponse>(`${environment.gateWayUrl}${this.ENDPOINT}`, {
         email,
         password,
       })
@@ -54,7 +54,7 @@ export class AuthService {
     let response: Observable<boolean | UrlTree>;
     if (localStorage.getItem(TOKEN) != null) {
       response = this._http
-        .get<MeResponse>(`${environment.sbeUrl}${this.ENDPOINT}me`, {
+        .get<MeResponse>(`${environment.gateWayUrl}${this.ENDPOINT}me`, {
           observe: 'body',
           headers: {
             Authorization: `Bearer ${localStorage.getItem(TOKEN)}`,

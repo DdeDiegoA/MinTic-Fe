@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  sbeUrl: "http://localhost:4000/"
+  gateWayUrl: "http://localhost:4000/",
+  sbeUrl: "http://localhost:8080/api/"
 };
 
 /*

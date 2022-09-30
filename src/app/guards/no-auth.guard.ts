@@ -16,7 +16,7 @@ export class NoAuthGuard implements CanActivate {
     let response: Promise<boolean> | boolean;
       if (localStorage.getItem(TOKEN) != null) {
       this.dataService.loadingScreen.next(false);
-        response = this.router.navigate(['dashboard']);
+        response = this.router.navigate(['user-info']);
     } else {
       this.dataService.loadingScreen.next(false);
       response = true;

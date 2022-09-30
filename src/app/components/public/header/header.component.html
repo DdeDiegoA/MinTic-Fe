@@ -19,13 +19,13 @@
             <span *ngIf="!isLoggedIn" routerLink="singup" class="nav-link">SingUp</span>
             <span *ngIf="!isLoggedIn" routerLink="login" class="nav-link">Login</span>
         </nav>
-        <span *ngIf="isLoggedIn" class="salute">¡Bienvenido {{ nombre }}!</span>
+        <span *ngIf="isLoggedIn" class="salute" routerLink="user-info">¡Bienvenido {{ nombre }}!</span>
         <nav *ngIf="isLoggedIn">
             
 
             <span *appHasPermission="['Admin','Jurado']" [matMenuTriggerFor]="menuAdmin" aria-label="menu">Administracion</span>
             <mat-menu class="menumat" #menuAdmin="matMenu">
-                <button mat-menu-item class="navegationButton"  *appHasPermission="['Admin']" matSuffix>
+                <button mat-menu-item class="navegationButton"  *appHasPermission="['Admin']" routerLink="users-dashboard" matSuffix>
                     <mat-icon>perm_identity</mat-icon>
                     <span class="item">Usuarios</span>
                 </button>

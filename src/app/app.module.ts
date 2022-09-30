@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu'
+import {MatTableModule} from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
@@ -24,7 +25,8 @@ import { PrivateComponent } from './components/private/private.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HasPermissionDirective } from './directives/has-permission.directive';
 import { UserInfoComponent } from './components/user-info/user-info.component';
-import { UsersDashboardComponent } from './components/users-dashboard/users-dashboard.component'
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component'
+import { MatPaginator } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { UsersDashboardComponent } from './components/users-dashboard/users-dash
     PrivateComponent,
     HasPermissionDirective,
     UserInfoComponent,
-    UsersDashboardComponent
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,9 @@ import { UsersDashboardComponent } from './components/users-dashboard/users-dash
     HttpClientModule,
     MatIconModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+ 
     
   ],
   providers: [],
