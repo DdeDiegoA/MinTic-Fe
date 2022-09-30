@@ -1,0 +1,39 @@
+<div class="contenedor">
+  <mat-card-title>Actualizar Usuario</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="updateUserForm" (ngSubmit)="updateUserSubmit()">
+
+      <mat-form-field class="update-user-form-field" appearance="standard">
+        <mat-label>Nombre Usuario</mat-label>
+        <input formControlName="seudonimo" name="seudonimo" matInput placeholder="seudonimo">
+        <mat-icon fontSet="material-icons-outlined" matSuffix>person</mat-icon>
+        <mat-hint>Ingrese el alias de usuario</mat-hint>
+
+        <mat-error *ngIf="isInvalidField('seudonimo')">
+          <span *ngIf="hasError('seudonimo', 'required')">El campo es requerido</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="role" name="role">
+          <mat-option *ngFor="let role of roles" [value]="role.name">
+            {{role.name}}
+          </mat-option>
+        </mat-select>
+        <mat-icon fontSet="material-icons-outlined" matSuffix>
+          badge
+        </mat-icon>
+        <mat-hint>Seleccione un rol (Opcional)</mat-hint>
+
+        <mat-error *ngIf="isInvalidField('role')">
+          <span *ngIf="hasError('role', 'required')">El campo es requerido</span>
+        </mat-error>
+
+      </mat-form-field>
+      <button class="update-user-button" type="submit" mat-raised-button >Actualizar Usuario</button>
+      <button [matDialogClose] class="update-user-button" mat-raised-button >Cerrar</button>
+
+    </form>
+  </mat-card-content>
+</div>

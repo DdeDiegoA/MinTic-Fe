@@ -1,0 +1,38 @@
+contenedor{
+    width: 600px;
+}
+.update-user-card {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    margin: 32px;
+    max-width: 400px;
+  }
+  
+  .update-user-header {
+    justify-content: center;
+  }
+  
+  .update-user-title {
+    font-weight: bold;
+  }
+  
+  .update-user-logo {
+    margin: auto;
+    width: 256px;
+  }
+  
+  .update-user-form {
+    padding: 24px;
+  }
+  
+  .update-user-form-field {
+    display: flex;
+  }
+  
+  .update-user-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    width: 100%;
+  }

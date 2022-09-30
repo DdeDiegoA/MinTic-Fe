@@ -11,6 +11,7 @@ import { NoAuthGuard } from './guards/no-auth.guard';
 import { UserResolver } from './resolvers/user/user.resolver';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { UsersResolver } from './resolvers/users/users.resolver';
+import { RoleResolver } from './resolvers/users/role.resolver';
 import { IsRoleGuard } from './guards/is-role.guard';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
@@ -58,6 +59,7 @@ const routes: Routes = [
         canActivate:[IsRoleGuard],
         resolve:{
           response: UsersResolver,
+          roleResponse: RoleResolver,
         },
         component:UserDashboardComponent
       },

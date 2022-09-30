@@ -14,14 +14,14 @@
             </ng-container>
 
             <ng-container matColumnDef="role">
-                <th class="table-cell" mat-header-cell *matHeaderCellDef> rol </th>
+                <th class="table-cell" mat-header-cell *matHeaderCellDef> Rol </th>
                 <td class="table-cell" mat-cell *matCellDef="let element"> {{element.role.name}} </td>
             </ng-container>
 
             <ng-container matColumnDef="editar">
                 <th class="table-cell" mat-header-cell *matHeaderCellDef> Editar </th>
                 <td class="table-cell" mat-cell *matCellDef="let element">
-                    <button mat-icon-button>
+                    <button mat-icon-button (click)="startEdit(element)">
                         <mat-icon class="edit-icon">edit</mat-icon>
                     </button>
                 </td>
@@ -30,8 +30,8 @@
             <ng-container matColumnDef="eliminar">
                 <th class="table-cell" mat-header-cell *matHeaderCellDef> Eliminar </th>
                 <td class="table-cell" mat-cell *matCellDef="let element">
-                    <button mat-icon-button>
-                        <mat-icon class="">delete</mat-icon>
+                    <button mat-icon-button (click)="openConfirmDialog(element.id)">
+                        <mat-icon class="delete-icon">delete</mat-icon>
                     </button>
                 </td>
             </ng-container>
