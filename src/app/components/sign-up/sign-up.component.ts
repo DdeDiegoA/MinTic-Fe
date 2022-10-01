@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   constructor(
     private UserService:UserService,
     private snackBar: MatSnackBar,
-    private dashBoard:UserDashboardComponent,
+    // private dashBoard:UserDashboardComponent,
   ) {
     this.icon = 'visibility_off';
   }
@@ -44,7 +44,7 @@ export class SignUpComponent implements OnInit {
           verticalPosition: 'bottom',
           horizontalPosition:'right' 
          })
-         this.dashBoard.updateUsersTableRequest()
+        //  this.dashBoard.updateUsersTableRequest()
       },
       error:(err)=>{
         this.snackBar.open('Creacion fallida', 'cerrar', {
