@@ -1,4 +1,7 @@
+
 <div class="contenedor">
+    <app-sign-up></app-sign-up>
+    <div class="contenedorTable">
     <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
@@ -43,7 +46,7 @@
             <tr class="mat-row" *matNoDataRow>
                 <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
             </tr>
-
         </table>
+        </div>
     </div>
 </div>

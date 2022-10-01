@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { UserService } from 'src/app/service/user/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserDashboardComponent } from '../user-dashboard/user-dashboard.component';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,7 +12,9 @@ import { UserService } from 'src/app/service/user/user.service';
 export class SignUpComponent implements OnInit {
   icon: string;
   constructor(
-    private UserService:UserService
+    private UserService:UserService,
+    private snackBar: MatSnackBar,
+    private dashBoard:UserDashboardComponent,
   ) {
     this.icon = 'visibility_off';
   }
@@ -35,10 +39,19 @@ export class SignUpComponent implements OnInit {
       this.singUpForm.value["password"]
     ).subscribe({
       next:()=>{
-        alert('Creacion creacionada')
+        this.snackBar.open('Creacion exitosa', 'cerrar', {
+          duration: 20000, 
+          verticalPosition: 'bottom',
+          horizontalPosition:'right' 
+         })
+         this.dashBoard.updateUsersTableRequest()
       },
       error:(err)=>{
-        alert(err.error)
+        this.snackBar.open('Creacion fallida', 'cerrar', {
+          duration: 20000, 
+          verticalPosition: 'bottom',
+          horizontalPosition:'right' 
+         })
       }
     })
 

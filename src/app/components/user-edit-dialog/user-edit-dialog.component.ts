@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Role } from 'src/app/models/auth/role';
 import { UserService } from 'src/app/service/user/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface DialogData {
   ID: string;
@@ -30,6 +31,7 @@ export class UserEditDialogComponent implements OnInit {
     private userDataService:UserService,
     private dialogRef: MatDialogRef<UserEditDialogComponent>,
     private route: ActivatedRoute,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data:DialogData
   ) {}
 
@@ -47,12 +49,19 @@ export class UserEditDialogComponent implements OnInit {
         this.updateUserForm.value['seudonimo']!
       ).subscribe({
         next: () => {
-          // this.snackBar.open(`Creacion de usuario exitoso`, 'cerrar', { duration: 2000 });
+          this.snackBar.open('Datos Actualizados', 'cerrar', {
+            duration: 20000, 
+            verticalPosition: 'bottom',
+            horizontalPosition:'right' 
+           })
           this.dialogRef.close(true);
         },
         error: (err) => {       
-            console.log(err)  
-          // this.snackBar.open(err.error, 'cerrar', { duration: 2000 });
+          this.snackBar.open('Actualizacion Fallida', 'cerrar', {
+            duration: 20000, 
+            verticalPosition: 'bottom',
+            horizontalPosition:'right' 
+           })
          }
       });
     }

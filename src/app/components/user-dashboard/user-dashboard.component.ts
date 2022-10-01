@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserEditDialogComponent } from '../user-edit-dialog/user-edit-dialog.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { UserService } from 'src/app/service/user/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -36,7 +37,8 @@ export class UserDashboardComponent implements OnInit , AfterViewInit {
     private route: ActivatedRoute,
     private dialog:MatDialog,
     private userDataService:UserService,
-    private changeDetectorRefs: ChangeDetectorRef
+    private changeDetectorRefs: ChangeDetectorRef,
+    private snackBar: MatSnackBar
     
     ) { 
     this.users=this.route.snapshot.data['response'];
@@ -109,7 +111,11 @@ export class UserDashboardComponent implements OnInit , AfterViewInit {
       if(res){
         this.userDataService.deleteUser(userId).subscribe({
           next:() =>{
-            alert("se borro jaja")
+            this.snackBar.open('Usuario Borrado', 'cerrar', {
+              duration: 20000, 
+              verticalPosition: 'bottom',
+              horizontalPosition:'right' 
+             })
           }
         }
         )

@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu'
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'
@@ -64,7 +65,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     MatMenuModule,
     MatTableModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   
  
     
